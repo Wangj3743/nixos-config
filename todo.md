@@ -1,3 +1,4 @@
+# todo
 home manager
 caelestia, remove plasma?
 omz plugins or fish?
@@ -8,3 +9,15 @@ universal FHS thing
 quartus prime, modelsim, ltspice lol
 syncthing fix
 zellij start on ghostty
+
+# directory
+flake.nix
+hardware-configuration.nix
+users.nix
+packages.nix
+services.nix
+desktop.nix
+network.nix
+home/hypr-rice.nix
+.gitignore
+
