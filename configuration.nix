@@ -1,10 +1,12 @@
-{ config, pkgs, ... }:
-
-{
+{ config, pkgs, ... }: {
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-    # TEMP
-    nixpkgs.config.allowBroken = true;
+    imports =
+    [
+        ./hardware-configuration.nix
+        ./users.nix
+        ./packages.nix
+    ];
 
     # automatic updating
     system.autoUpgrade.enable = true;
@@ -15,12 +17,6 @@
     nix.gc.dates = "daily";
     nix.gc.options = "--delete-older-than 10d";
     nix.settings.auto-optimise-store = true;
-
-    imports =
-    [
-        ./hardware-configuration.nix
-        ./users.nix
-    ];
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
@@ -36,10 +32,8 @@
     # Enable networking
     networking.networkmanager.enable = true;
 
-    # Set your time zone.
+    # locale
     time.timeZone = "America/Toronto";
-
-    # Select internationalisation properties.
     i18n.defaultLocale = "en_CA.UTF-8";
 
     # fcitx5-mozc
@@ -52,20 +46,6 @@
         ];
     };
 
-    # Enable the X11 windowing system.
-    # You can disable this if you're only using the Wayland session.
-    services.xserver.enable = true;
-
-    # Enable the KDE Plasma Desktop Environment.
-    services.displayManager.sddm.enable = true;
-    services.desktopManager.plasma6.enable = true;
-
-    # Enable hyprland
-    services.displayManager.ly.enable = false;
-    programs.hyprland.enable = true;
-    # programs.hyprland.withUWSM = false;
-    # programs.uwsm.enable = true;
-    # programs.uwsm.waylandCompositors = "hyprland";  # this line is wrong
 
     # Configure keymap in X11
     services.xserver.xkb = {
@@ -95,85 +75,7 @@
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
 
-    programs.zsh.enable = true;
-    programs.fish.enable = true;
-    programs.steam.enable = true;
 
-    # Allow unfree packages
-    nixpkgs.config.allowUnfree = true;
-
-    # List packages installed in system profile. To search, run:
-    # $ nix search wget
-    environment.systemPackages = with pkgs; [
-        # system
-        nh
-        fish
-        oh-my-zsh
-        alacritty
-        ghostty
-        kitty
-        fastfetch
-        hyfetch
-        wofi
-
-        # util
-        vim
-        neovim
-        git
-        tmux
-        btop
-        wine
-        zoxide
-        eza
-        fd
-        ripgrep
-        fzf
-        curl
-        ffmpeg
-        dmidecode
-
-        # development
-        gcc  # also g++?
-        clang
-        cmake
-        gnumake
-        ninja
-        python3
-        nodejs
-        rustup
-
-        # productivity
-        floorp
-        obsidian
-        discord
-        syncthing
-        localsend
-        zellij
-        qbittorrent
-        vlc
-        libreoffice
-        ticktick
-        anki
-
-        # multimedia
-        # obs
-        # kicad
-        # kdenlive
-        # lmms
-        # audacity
-
-        # games
-        minecraft
-        steam
-        steam-run
-        osu-lazer
-        taisei
-
-        # fun
-        cava
-        cmatrix
-        bsdgames
-    ];
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.

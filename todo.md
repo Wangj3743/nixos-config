@@ -9,6 +9,8 @@ universal FHS thing
 quartus prime, modelsim, ltspice lol
 syncthing fix
 zellij start on ghostty
+uwsm?
+xwayland
 
 # directory
 flake.nix
