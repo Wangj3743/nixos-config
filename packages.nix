@@ -2,25 +2,25 @@
     # enable X11
     services.xserver.enable = true;
 
-    # enable KDE Plasma
+    # login
     services.displayManager.sddm.enable = true;
+    # services.displayManager.ly.enable = true;
+
+    # enable KDE Plasma
     services.desktopManager.plasma6.enable = true;
 
     # enable hyprland
-    programs.hyprland.enable = true;
-    # programs.hyprland.withUWSM = false;
-    # programs.uwsm.enable = true;
-    # programs.uwsm.waylandCompositors = "hyprland";  # this line is wrong
+    # programs.hyprland.enable = true;
 
     # enable niri
     programs.niri.enable = true;
 
     # WM services
-    services.displayManager.ly.enable = false;
     programs.hyprlock.enable = true;
 
     # shell
     programs.zsh.enable = true;
+    programs.zsh.ohMyZsh.enable = true;
     programs.fish.enable = true;
 
     # other
@@ -34,13 +34,13 @@
     environment.systemPackages = with pkgs; [
         # system
         nh
-        fish
-        oh-my-zsh
+        xwayland-satellite
         alacritty
         ghostty
         kitty
         fastfetch
         hyfetch
+        waybar
         waybar-mpris
         swww
         wofi
@@ -52,11 +52,13 @@
         slurp
         grim
         wl-clipboard
+        starship
 
 
         # util
         vim
         neovim
+        vscode
         git
         tmux
         btop
@@ -68,6 +70,8 @@
         fzf
         curl
         ffmpeg
+        fprintd
+        usbutils
         dmidecode
 
         # development
@@ -94,6 +98,7 @@
         anki
 
         # multimedia
+        deadbeef
         # obs
         # kicad
         # kdenlive

@@ -75,8 +75,6 @@
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
 
-
-
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # programs.mtr.enable = true;
@@ -84,6 +82,16 @@
     #   enable = true;
     #   enableSSHSupport = true;
     # };
+
+    services.xserver.displayManager.sddm = {
+      enable = true;
+      theme = "breeze";
+      settings = {
+        Theme = {
+          Background = "~/Pictures/wallpapers/20250928_134631.jpg";
+        };
+      };
+    };
 
     # List services that you want to enable:
 
