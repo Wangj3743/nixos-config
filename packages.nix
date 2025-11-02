@@ -3,19 +3,28 @@
     services.xserver.enable = true;
 
     # login
-    services.displayManager.sddm.enable = true;
     # services.displayManager.ly.enable = true;
+    services.displayManager.sddm.enable = true;
 
     # enable KDE Plasma
     services.desktopManager.plasma6.enable = true;
 
     # enable hyprland
     # programs.hyprland.enable = true;
+    # programs.hyprland.portalPackage = pkgs.xdg-desktop-portal-hyprland;
 
     # enable niri
     programs.niri.enable = true;
 
     # WM services
+    xdg.portal = {
+      enable = true;
+      wlr.enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+        # kdePackages.xdg-desktop-portal-kde
+      ];
+    };
     programs.hyprlock.enable = true;
 
     # shell
@@ -49,11 +58,13 @@
         jq
         dunst
         libnotify
-        slurp
-        grim
         wl-clipboard
         starship
-
+        xdg-desktop-portal-wlr
+        kdePackages.xdg-desktop-portal-kde
+        dwm
+        dmenu
+        st
 
         # util
         vim
@@ -110,7 +121,7 @@
         steam-run
         # minecraft  # nixpkgs.config.allowBroken = true;
         prismlauncher
-        osu-lazer
+        osu-lazer-bin
         taisei
 
         # fun

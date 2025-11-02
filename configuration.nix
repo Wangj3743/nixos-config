@@ -83,12 +83,12 @@
     #   enableSSHSupport = true;
     # };
 
-    services.xserver.displayManager.sddm = {
+    services.displayManager.sddm = {
       enable = true;
       theme = "breeze";
       settings = {
         Theme = {
-          Background = "~/Pictures/wallpapers/20250928_134631.jpg";
+          Background = "~/Pictures/wallpapers/20250928_134631.jpg"; # [!] broken
         };
       };
     };
@@ -103,6 +103,14 @@
     # networking.firewall.allowedUDPPorts = [ ... ];
     # Or disable the firewall altogether.
     # networking.firewall.enable = false;
+
+    fileSystems."/mnt/win11" = {
+      device = "/dev/disk/by-uuid/6A4A1ED74A1E9FBD";
+      fsType = "ntfs3";
+      options = [ "rw" "uid=1000" "gid=100" "dmask=022" "fmask=133" ];
+    };
+
+    # environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
