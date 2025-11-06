@@ -30,7 +30,7 @@
     # shell
     programs.zsh.enable = true;
     programs.zsh.ohMyZsh.enable = true;
-    programs.fish.enable = true;
+    # programs.fish.enable = true;
 
     # other
     programs.steam.enable = true;
@@ -41,9 +41,33 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
+        # FHS
+        (
+          let
+            base = pkgs.appimageTools.defaultFhsEnvArgs;
+          in
+          pkgs.buildFHSEnv (
+            base
+            // {
+              name = "fhs";
+              targetPkgs =
+                pkgs:
+                (base.targetPkgs pkgs)
+                ++ (with pkgs; [
+                  pkg-config
+                  wineWow64Packages.wayland
+                ]);
+              profile = "export FHS=1";
+              runScript = "zsh";
+              extraOutputsToInstall = [ "dev" ];
+            }
+          )
+        )
+
         # system
         nh
         xwayland-satellite
+        brightnessctl
         alacritty
         ghostty
         kitty
@@ -63,8 +87,7 @@
         xdg-desktop-portal-wlr
         kdePackages.xdg-desktop-portal-kde
         dwm
-        dmenu
-        st
+        dmenu st
 
         # util
         vim
@@ -73,7 +96,6 @@
         git
         tmux
         btop
-        wine
         zoxide
         eza
         fd
@@ -127,6 +149,5 @@
         # fun
         cava
         cmatrix
-        bsdgames
     ];
 }
