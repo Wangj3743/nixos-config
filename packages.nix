@@ -18,12 +18,12 @@
 
     # WM services
     xdg.portal = {
-      enable = true;
-      wlr.enable = true;
-      extraPortals = [
-        pkgs.xdg-desktop-portal-gtk
-        # kdePackages.xdg-desktop-portal-kde
-      ];
+        enable = true;
+        wlr.enable = true;
+        extraPortals = [
+            pkgs.xdg-desktop-portal-gtk
+            # kdePackages.xdg-desktop-portal-kde
+        ];
     };
     programs.hyprlock.enable = true;
 
@@ -33,6 +33,8 @@
     # programs.fish.enable = true;
 
     # other
+    programs.nix-ld.enable = true;
+    services.flatpak.enable = true;
     programs.steam.enable = true;
 
     # Allow unfree packages
@@ -87,7 +89,9 @@
         xdg-desktop-portal-wlr
         kdePackages.xdg-desktop-portal-kde
         dwm
-        dmenu st
+        nushell
+        dmenu
+        st
 
         # util
         vim
@@ -116,6 +120,9 @@
         python3
         nodejs
         rustup
+        jre8
+        jre17
+        # quartus-prime-lite
 
         # productivity
         floorp
@@ -141,7 +148,6 @@
         # games
         steam
         steam-run
-        # minecraft  # nixpkgs.config.allowBroken = true;
         prismlauncher
         osu-lazer-bin
         taisei
