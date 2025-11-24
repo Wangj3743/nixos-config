@@ -10,11 +10,14 @@
     services.desktopManager.plasma6.enable = true;
 
     # enable hyprland
-    # programs.hyprland.enable = true;
-    # programs.hyprland.portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    programs.hyprland.enable = true;
+    programs.hyprland.portalPackage = pkgs.xdg-desktop-portal-hyprland;
 
     # enable niri
     programs.niri.enable = true;
+
+    # enable dwm
+    services.xserver.windowManager.dwm.enable = true;
 
     # WM services
     xdg.portal = {
@@ -92,8 +95,13 @@
         nushell
         dmenu
         st
+        wineWowPackages.stable
+        winetricks
+        wineWowPackages.waylandFull
 
         # util
+        zsh-autosuggestions
+        zsh-syntax-highlighting
         vim
         neovim
         vscode
@@ -110,6 +118,9 @@
         fprintd
         usbutils
         dmidecode
+        virtualbox
+        remmina
+        nautilus
 
         # development
         gcc  # also g++?
@@ -121,8 +132,9 @@
         nodejs
         rustup
         jre8
-        jre17
+        jre17_minimal
         # quartus-prime-lite
+        pastel
 
         # productivity
         floorp
@@ -142,7 +154,7 @@
         # obs
         # kicad
         # kdenlive
-        # lmms
+        lmms
         # audacity
 
         # games
@@ -154,6 +166,10 @@
 
         # fun
         cava
+        tty-clock
         cmatrix
+        cbonsai
+        pipes
+        figlet
     ];
 }
