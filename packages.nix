@@ -10,14 +10,14 @@
     services.desktopManager.plasma6.enable = true;
 
     # enable hyprland
-    programs.hyprland.enable = true;
-    programs.hyprland.portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    # programs.hyprland.enable = true;
+    # programs.hyprland.portalPackage = pkgs.xdg-desktop-portal-hyprland;
 
     # enable niri
     programs.niri.enable = true;
 
     # enable dwm
-    services.xserver.windowManager.dwm.enable = true;
+    # services.xserver.windowManager.dwm.enable = true;
 
     # WM services
     xdg.portal = {
@@ -36,45 +36,63 @@
     # programs.fish.enable = true;
 
     # other
-    programs.nix-ld.enable = true;
     services.flatpak.enable = true;
     programs.steam.enable = true;
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
+    # nix-ld
+    programs.nix-ld.enable = true;
+    programs.nix-ld.libraries = with pkgs; [
+        zlib
+        openssl
+        libgcc
+        # libstdcxx
+        xorg.libX11
+        xorg.libxcb
+        libxkbcommon
+        mesa
+        libglvnd
+        fuse
+        alsa-lib
+    ];
+
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
         # FHS
-        (
-          let
-            base = pkgs.appimageTools.defaultFhsEnvArgs;
-          in
-          pkgs.buildFHSEnv (
-            base
-            // {
-              name = "fhs";
-              targetPkgs =
-                pkgs:
-                (base.targetPkgs pkgs)
-                ++ (with pkgs; [
-                  pkg-config
-                  wineWow64Packages.wayland
-                ]);
-              profile = "export FHS=1";
-              runScript = "zsh";
-              extraOutputsToInstall = [ "dev" ];
-            }
-          )
-        )
+        # (
+        #   let
+        #     base = pkgs.appimageTools.defaultFhsEnvArgs;
+        #   in
+        #   pkgs.buildFHSEnv (
+        #     base
+        #     // {
+        #       name = "fhs";
+        #       targetPkgs =
+        #         pkgs:
+        #         (base.targetPkgs pkgs)
+        #         ++ (with pkgs; [
+        #           pkg-config
+        #           wineWow64Packages.wayland
+        #         ]);
+        #       profile = "export FHS=1";
+        #       runScript = "zsh";
+        #       extraOutputsToInstall = [ "dev" ];
+        #     }
+        #   )
+        # )
+
 
         # system
         nh
+        nix-index
+        tlp
         xwayland-satellite
         brightnessctl
-        alacritty
-        ghostty
+        # alacritty
+        # ghostty
         kitty
         fastfetch
         hyfetch
@@ -91,10 +109,10 @@
         starship
         xdg-desktop-portal-wlr
         kdePackages.xdg-desktop-portal-kde
-        dwm
-        nushell
-        dmenu
-        st
+        # nushell
+        # dwm
+        # dmenu
+        # st
         wineWowPackages.stable
         winetricks
         wineWowPackages.waylandFull
@@ -137,7 +155,7 @@
         pastel
 
         # productivity
-        floorp
+        # floorp
         obsidian
         discord
         syncthing
