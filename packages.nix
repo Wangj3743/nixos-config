@@ -136,8 +136,8 @@
         fprintd
         usbutils
         dmidecode
-        virtualbox
-        remmina
+        # virtualbox
+        # remmina
         nautilus
 
         # development
@@ -163,24 +163,23 @@
         zellij
         qbittorrent
         vlc
-        libreoffice
+        # libreoffice
         ticktick
-        anki
+        # anki
 
         # multimedia
         deadbeef
         # obs
         # kicad
         # kdenlive
-        lmms
+        # lmms
         # audacity
 
         # games
-        steam
         steam-run
         prismlauncher
-        osu-lazer-bin
-        taisei
+        # osu-lazer-bin
+        # taisei
 
         # fun
         cava
