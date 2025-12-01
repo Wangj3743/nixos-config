@@ -43,20 +43,23 @@
     nixpkgs.config.allowUnfree = true;
 
     # nix-ld
-    programs.nix-ld.enable = true;
-    programs.nix-ld.libraries = with pkgs; [
-        zlib
-        openssl
-        libgcc
-        # libstdcxx
-        xorg.libX11
-        xorg.libxcb
-        libxkbcommon
-        mesa
-        libglvnd
-        fuse
-        alsa-lib
-    ];
+    # programs.nix-ld.enable = true;
+    # programs.nix-ld.libraries = with pkgs; [
+    #     zlib
+    #     openssl
+    #     libgcc
+    #     # libstdcxx
+    #     xorg.libX11
+    #     xorg.libxcb
+    #     libxkbcommon
+    #     mesa
+    #     libglvnd
+    #     fuse
+    #     alsa-lib
+    #     wineWowPackages.stable
+    #     winetricks
+    #     wineWowPackages.waylandFull
+    # ];
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
@@ -99,9 +102,9 @@
         waybar
         waybar-mpris
         swww
-        wofi
+        # wofi
         fuzzel
-        nwg-bar
+        # nwg-bar
         jq
         dunst
         libnotify
@@ -113,16 +116,13 @@
         # dwm
         # dmenu
         # st
-        wineWowPackages.stable
-        winetricks
-        wineWowPackages.waylandFull
 
         # util
         zsh-autosuggestions
         zsh-syntax-highlighting
         vim
         neovim
-        vscode
+        # vscode
         git
         tmux
         btop
@@ -133,12 +133,9 @@
         fzf
         curl
         ffmpeg
-        fprintd
-        usbutils
-        dmidecode
+        nautilus
         # virtualbox
         # remmina
-        nautilus
 
         # development
         gcc  # also g++?
@@ -155,20 +152,19 @@
         pastel
 
         # productivity
-        # floorp
         obsidian
         discord
         syncthing
-        localsend
+        # localsend
         zellij
-        qbittorrent
-        vlc
+        # qbittorrent
+        # vlc
         # libreoffice
-        ticktick
+        # ticktick
         # anki
 
         # multimedia
-        deadbeef
+        # deadbeef
         # obs
         # kicad
         # kdenlive
@@ -176,7 +172,7 @@
         # audacity
 
         # games
-        steam-run
+        # steam-run
         prismlauncher
         # osu-lazer-bin
         # taisei
