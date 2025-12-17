@@ -31,9 +31,13 @@
     programs.hyprlock.enable = true;
 
     # shell
-    programs.zsh.enable = true;
-    programs.zsh.ohMyZsh.enable = true;
-    # programs.fish.enable = true;
+    # programs.zsh.enable = true;
+    # programs.zsh.ohMyZsh.enable = true;
+    programs.fish.enable = true;
+
+    # power saving
+    services.power-profiles-daemon.enable = false;
+    services.tlp.enable = true;
 
     # other
     services.flatpak.enable = true;
@@ -87,11 +91,28 @@
         #   )
         # )
 
+        # nix-ld
+        # with pkgs; let
+        #     # The rest of my packages
+        #
+        #     libraries = [
+        #         libGL
+        #         glfw3-minecraft
+        #         libpulseaudio
+        #     ];
+        # in {
+        #     # Other code here
+        #
+        #     programs.nix-ld = {    
+        #         enable = true;
+        #         inherit libraries;
+        #     };
+        #     environment.variables.LD_LIBRARY_PATH = lib.makeLibraryPath libraries;
+        # }
 
         # system
         nh
         nix-index
-        tlp
         xwayland-satellite
         brightnessctl
         # alacritty
@@ -103,8 +124,7 @@
         waybar-mpris
         swww
         # wofi
-        fuzzel
-        # nwg-bar
+        fuzzel # nwg-bar
         jq
         dunst
         libnotify
@@ -118,8 +138,8 @@
         # st
 
         # util
-        zsh-autosuggestions
-        zsh-syntax-highlighting
+        # zsh-autosuggestions
+        # zsh-syntax-highlighting
         vim
         neovim
         # vscode
@@ -134,6 +154,8 @@
         curl
         ffmpeg
         nautilus
+        stow
+        yt-dlp
         # virtualbox
         # remmina
 
@@ -155,11 +177,16 @@
         obsidian
         discord
         syncthing
-        # localsend
+        localsend
         zellij
-        # qbittorrent
-        # vlc
-        # libreoffice
+        qbittorrent
+        vlc
+        pom
+        spotify
+        cmus
+        rmpc
+        mpd
+        libreoffice
         # ticktick
         # anki
 
@@ -169,12 +196,12 @@
         # kicad
         # kdenlive
         # lmms
-        # audacity
+        audacity
 
         # games
         # steam-run
         prismlauncher
-        # osu-lazer-bin
+        osu-lazer-bin
         # taisei
 
         # fun

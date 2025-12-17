@@ -1,17 +1,10 @@
 # todo
 home manager
-omz plugins or fish?
-enable swap
-starship
+omz plugins?
 universal FHS thing
-quartus prime, modelsim, ltspice lol
-syncthing fix
-zellij start on ghostty
-uwsm?
-fonts
-automount windows partition
-nvim discord
-deadbeef music thingy
+waybar-mpris & scripts & dunst
+nvchad discord
+
 
 # directory
 flake.nix
