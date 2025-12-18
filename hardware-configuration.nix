@@ -24,10 +24,16 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
- fileSystems."/mnt/win11" =
-    { device = "/dev/disk/by-uuid/6A4A1ED74A1E9FBD";
-      fsType = "ntfs3";
-    };
+# fileSystems."/mnt/win11" =
+#    { device = "/dev/disk/by-uuid/6A4A1ED74A1E9FBD";
+#      fsType = "ntfs3";
+#    };
+
+  fileSystems."/mnt/win11" = {
+    device = "/dev/disk/by-uuid/6A4A1ED74A1E9FBD";
+    fsType = "ntfs3";
+    options = [ "rw" "uid=1000" "gid=100" "dmask=022" "fmask=133" ];
+  };
 
   swapDevices = [ ];
 
