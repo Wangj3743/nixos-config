@@ -24,11 +24,6 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-# fileSystems."/mnt/win11" =
-#    { device = "/dev/disk/by-uuid/6A4A1ED74A1E9FBD";
-#      fsType = "ntfs3";
-#    };
-
   fileSystems."/mnt/win11" = {
     device = "/dev/disk/by-uuid/6A4A1ED74A1E9FBD";
     fsType = "ntfs3";
@@ -37,10 +32,10 @@
 
   swapDevices = [ ];
 
-  zramSwap = {
-    enable = true;
-    memoryPercent = 50;
-  };
+  # zramSwap = {
+  #   enable = true;
+  #   memoryPercent = 50;
+  # };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
