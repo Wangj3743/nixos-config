@@ -1,5 +1,5 @@
 {
-  description = "nixos configuration";
+  description = "mixos configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -11,14 +11,28 @@
   };
 
   outputs = inputs@{ self, nixpkgs, ... }: {
-    nixosConfigurations.mixos = nixpkgs.lib.nixosSystem {
+    # laptop
+    nixosConfigurations.pasokon = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
-        ./configuration.nix
-        ./hardware-configuration.nix
+        ./common/common.nix
+        ./hosts/laptop.nix
+        ./hardware/laptop.nix
         ./noctalia.nix
       ];
     };
+
+    # server
+    nixosConfigurations.saba = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./common/common.nix
+        ./hosts/server.nix
+        ./hardware/server.nix
+      ];
+    };
+
   };
 }
