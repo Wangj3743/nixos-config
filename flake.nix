@@ -33,6 +33,5 @@
         ./hardware/server.nix
       ];
     };
-
   };
 }

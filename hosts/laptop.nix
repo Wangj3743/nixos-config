@@ -87,17 +87,6 @@
   #   enableSSHSupport = true;
   # };
 
-  services.displayManager.sddm = {
-    enable = true;
-    theme = "breeze";
-    settings = {
-      Theme = {
-        Background = "~/Pictures/wallpapers/20250928_134631.jpg"; # [!] broken
-      };
-    };
-  };
-
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -120,9 +109,7 @@
     jq
     # dunst
     libnotify
-    wl-clipboard
-    starship
-    xdg-desktop-portal-wlr
+    wl-clipboard starship xdg-desktop-portal-wlr
     kdePackages.xdg-desktop-portal-kde
     # nushell
     # dwm
@@ -211,7 +198,16 @@
 
   # login
   # services.displayManager.ly.enable = true;
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    theme = "breeze";
+    settings = {
+      Theme = {
+        Background = "~/Pictures/wallpapers/20250928_134631.jpg"; # [!] broken
+      };
+    };
+  };
+
 
   # enable KDE Plasma
   services.desktopManager.plasma6.enable = true;
