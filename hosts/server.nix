@@ -32,8 +32,15 @@
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  # Enable the X11 windowing system.
+  # X11
   services.xserver.enable = true;
+
+  # LXQT
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.desktopManager.lxqt.enable = true;
+
+  # network manager applet
+  programs.nm-applet.enable = true;
 
   # Enable the XFCE Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
