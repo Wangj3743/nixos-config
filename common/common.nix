@@ -8,6 +8,15 @@
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_CA.UTF-8";
 
+  # users
+  users.users.yuni = {
+    isNormalUser = true;
+    description = "yuni";
+    extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.fish;
+    packages = with pkgs; [];
+  };
+
   # packages
   environment.systemPackages = with pkgs; [
     # system

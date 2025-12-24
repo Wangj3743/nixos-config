@@ -72,15 +72,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
 
-  # users
-  users.users.yuni = {
-    isNormalUser = true;
-    description = "yuni";
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.fish;
-    packages = with pkgs; [];
-  };
-
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

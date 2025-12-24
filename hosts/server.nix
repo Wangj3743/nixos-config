@@ -67,14 +67,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
 
-  # users
-  users.users.kanri = {
-    isNormalUser = true;
-    description = "kanri";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-  };
-
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
