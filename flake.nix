@@ -20,7 +20,13 @@
         ./hosts/laptop.nix
         ./hardware/laptop.nix
         ./noctalia.nix
+        ./common/modules/sddm.nix
       ];
+    };
+
+    # pc
+    nixosConfigurations.pici = nixpkgs.lib.nixosSystem {
+      # to be bought :(
     };
 
     # server

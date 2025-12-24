@@ -11,26 +11,35 @@
   nix.gc.options = "--delete-older-than 10d";
   nix.settings.auto-optimise-store = true;
 
-  # Bootloader.
+  # bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "mixos"; # Define your hostname.
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
+  # networking
+  networking.hostName = "pasokon";
   networking.networkmanager.enable = true;
-
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant
   services.avahi = {
     enable = true;
     publish.enable = true;
   };
 
+  # network proxy
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
   # locale
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_CA.UTF-8";
+
+  #  X11
+  services.xserver.enable = true;
+
+  # configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
 
   # fcitx5-mozc
   i18n.inputMethod = {
@@ -42,25 +51,10 @@
     ];
   };
 
-  users.users.yuni = {
-    isNormalUser = true;
-    description = "yuni";
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.fish;
-    # shell = pkgs.zsh;
-    packages = with pkgs; [ ];
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  # Enable CUPS to print documents.
+  # enable CUPS to print documents
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
+  # pipewire
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -68,7 +62,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
     jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
@@ -77,18 +70,21 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.xserver.libinput.enable = true;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  # users
+  users.users.yuni = {
+    isNormalUser = true;
+    description = "yuni";
+    extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.fish;
+    packages = with pkgs; [];
+  };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # packages
   environment.systemPackages = with pkgs; [
     # system
     nh
@@ -139,7 +135,7 @@
     # remmina
 
     # development
-    gcc  # also g++?
+    gcc
     clang
     cmake
     gnumake
@@ -189,37 +185,26 @@
     cbonsai
     pipes
     figlet
+
+    sddm-astronaut
+    kdePackages.qtmultimedia
   ];
 
-  # List services that you want to enable:
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
 
-  # enable X11
-  services.xserver.enable = true;
-
-  # login
-  # services.displayManager.ly.enable = true;
-  services.displayManager.sddm = {
-    enable = true;
-    theme = "breeze";
-    settings = {
-      Theme = {
-        Background = "~/Pictures/wallpapers/20250928_134631.jpg"; # [!] broken
-      };
-    };
-  };
-
-
-  # enable KDE Plasma
-  services.desktopManager.plasma6.enable = true;
-
-  # enable hyprland
-  # programs.hyprland.enable = true;
-  # programs.hyprland.portalPackage = pkgs.xdg-desktop-portal-hyprland;
-
-  # enable niri
+  # DE/WM/WC
   programs.niri.enable = true;
-
-  # enable dwm
+  services.desktopManager.plasma6.enable = true;
+  # programs.hyprland = {
+    # enable = true;
+    # programs.hyprland.portalPackage = pkgs.xdg-desktop-portal-hyprland;
+  # }
   # services.xserver.windowManager.dwm.enable = true;
 
   # WM services
@@ -233,11 +218,6 @@
   };
   # programs.hyprlock.enable = true;
 
-  # shell
-  # programs.zsh.enable = true;
-  # programs.zsh.ohMyZsh.enable = true;
-  programs.fish.enable = true;
-
   # power saving
   services.power-profiles-daemon.enable = false;
   services.tlp.enable = true;
@@ -250,38 +230,13 @@
   services.flatpak.enable = true;
   programs.steam.enable = true;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # nix-ld
-  # programs.nix-ld.enable = true;
-  # programs.nix-ld.libraries = with pkgs; [
-  #     zlib
-  #     openssl
-  #     libgcc
-  #     # libstdcxx
-  #     xorg.libX11
-  #     xorg.libxcb
-  #     libxkbcommon
-  #     mesa
-  #     libglvnd
-  #     fuse
-  #     alsa-lib
-  #     wineWowPackages.stable
-  #     winetricks
-  #     wineWowPackages.waylandFull
-  # ];
-
-  # Enable the OpenSSH daemon.
+  # openssh daemon
   services.openssh.enable = true;
 
-  # Open ports in the firewall.
+  # open ports in the firewall
   networking.firewall.allowedTCPPorts = [ 53317 ];
   networking.firewall.allowedUDPPorts = [ 5353 53317 ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-
+  # networking.firewall.enable = false;  # disable firewall
 
   fileSystems."/mnt/win11" = {
     device = "/dev/disk/by-uuid/6A4A1ED74A1E9FBD";
