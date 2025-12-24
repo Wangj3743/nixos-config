@@ -214,6 +214,7 @@
   services.tlp.enable = true;
 
   # server/sync
+  services.tailscale.enable = true;
   services.syncthing.enable = true;
   programs.localsend.enable = true;
 
