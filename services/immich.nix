@@ -2,7 +2,7 @@
   # CONFIG
   services.immich = {
     enable = true;
-    openFirewall = false
+    openFirewall = false;
   };
 
   # DIRECTORIES
