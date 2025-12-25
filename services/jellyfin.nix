@@ -5,6 +5,9 @@
     openFirewall = false;
   };
 
+  # USER PERMISSIONS
+  users.users.jellyfin.extragroups = [ "srv" ];
+
   # DIRECTORIES
   systemd.tmpfiles.rules = [
     "d /srv/media 2775 root srv -"
