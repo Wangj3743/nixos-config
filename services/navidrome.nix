@@ -2,13 +2,9 @@
   # CONFIG
   services.navidrome = {
     enable = true;
-    dataDir = "/srv/navidrome";
-    musicDirs = [
-      "/srv/music/ongaku"
-      "/srv/music/ongaku2"
-    ];
-    # user = "navidrome";
-    port = 4533;
+    settings = {
+      MusicFolder = "/srv/music";
+    };
   };
 
 
