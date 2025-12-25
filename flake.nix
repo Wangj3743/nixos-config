@@ -40,6 +40,7 @@
         ./hardware/server.nix
 
         ./services/copyparty.nix
+        ./services/navidrome.nix
       ];
     };
   };

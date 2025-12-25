@@ -80,10 +80,6 @@
     curl
     zellij
     fastfetch
-
-    # SERVER STUFF
-    cloudflared
-    copyparty
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -102,7 +98,6 @@
   services.syncthing.enable = true;
   programs.localsend.enable = true;
   services.immich.enable = true;
-  services.navidrome.enable = true;
   services.jellyfin.enable = true;
   services.qbittorrent.enable = true;
 

@@ -1,5 +1,11 @@
 { config, pkgs, ... }: {
-# SYSTEMD SERVICE
+  # PKG
+  environment.systemPackages = with pkgs; [
+    copyparty
+    cloudflared
+  ];
+  
+  # SYSTEMD SERVICE
   systemd.services.copyparty = {
     description = "Copyparty File Server";
     wantedBy = [ "multi-user.target" ];
