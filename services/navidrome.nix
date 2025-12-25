@@ -3,14 +3,13 @@
   services.navidrome = {
     enable = true;
     settings = {
-      MusicFolder = "/srv/music";
+      MusicFolder = "/srv/media/music";
     };
   };
 
 
   # DIRECTORIES
   systemd.tmpfiles.rules = [
-    "d /srv/navidrome 2775 root srv -"
     "d /srv/media/music 2775 root srv -"
   ];
 }
