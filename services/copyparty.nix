@@ -32,7 +32,11 @@
     "d /srv/media/movies 2775 root srv -"
     "d /srv/media/tv 2775 root srv -"
     "d /srv/photos 2775 root srv -"
+
+    "d /srv/docs 2775 root srv -"
+    "d /srv/uni 2775 root srv -"
     "d /srv/projects 2775 root srv -"
+    "d /srv/games 2775 root srv -"
     "d /srv/dumps 2775 root srv -"
     "d /srv/shared 2775 root srv -"
   ];
