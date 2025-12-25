@@ -37,13 +37,14 @@
     "d /srv/media/movies 2775 root srv -"
     "d /srv/media/tv 2775 root srv -"
 
-    "d /srv/images 2775 root srv -"
-    "d /srv/images/camera 2775 root srv -"
-    "d /srv/images/camera/videos 2775 root srv -"
-    "d /srv/images/memes 2775 root srv -"
-    "d /srv/images/art 2775 root srv -"
-    "d /srv/images/graphics 2775 root srv -"
-    "d /srv/images/videos 2775 root srv -"
+    "d /srv/photos 2775 root srv -"
+    "d /srv/photos/camera 2775 root srv -"
+    "d /srv/photos/camera/videos 2775 root srv -"
+
+    "d /srv/photos/memes 2775 root srv -"
+    "d /srv/photos/art 2775 root srv -"
+    "d /srv/photos/graphics 2775 root srv -"
+    "d /srv/photos/videos 2775 root srv -"
 
     "d /srv/shared 2775 root srv -"
     "d /srv/shared/uni 2775 root srv -"
