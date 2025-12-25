@@ -40,7 +40,9 @@
         ./hardware/server.nix
 
         ./services/copyparty.nix
-        ./services/navidrome.nix
+        ./services/jellyfin.nix
+        ./services/immich.nix
+        ./services/navidrome.nix  # EVENTUALLY REPLACE RICE JELLYFIN
       ];
     };
   };

@@ -11,5 +11,6 @@
   # DIRECTORIES
   systemd.tmpfiles.rules = [
     "d /srv/navidrome 2775 root srv -"
+    "d /srv/media/music 2775 root srv -"
   ];
 }

@@ -97,8 +97,6 @@
   services.tailscale.enable = true;
   services.syncthing.enable = true;
   programs.localsend.enable = true;
-  services.immich.enable = true;
-  services.jellyfin.enable = true;
   services.qbittorrent.enable = true;
 
   # openssh daemon

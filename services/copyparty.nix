@@ -27,10 +27,10 @@
   # DIRECTORIES
   systemd.tmpfiles.rules = [
     "d /srv 2775 root srv -"
-    "d /srv/music 2775 root srv -"
     "d /srv/media 2775 root srv -"
-    "d /srv/media/Movies 2775 root srv -"
-    "d /srv/media/TV 2775 root srv -"
+    "d /srv/media/music 2775 root srv -"
+    "d /srv/media/movies 2775 root srv -"
+    "d /srv/media/tv 2775 root srv -"
     "d /srv/photos 2775 root srv -"
     "d /srv/projects 2775 root srv -"
     "d /srv/dumps 2775 root srv -"
