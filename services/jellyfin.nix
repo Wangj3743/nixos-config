@@ -6,7 +6,7 @@
   };
 
   # USER PERMISSIONS
-  users.users.jellyfin.extragroups = [ "srv" ];
+  users.users.jellyfin.extraGroups = [ "srv" ];
 
   # DIRECTORIES
   systemd.tmpfiles.rules = [
