@@ -53,7 +53,7 @@
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # enable the OpenSSH daemo.
+  # enable the OpenSSH daemon
   services.openssh.enable = true;
 
   # open ports in the firewall (for localsend)

@@ -77,7 +77,7 @@
 
   # packages
   environment.systemPackages = with pkgs; [
-    # system
+    # SYSTEM
     nh
     nix-index
     xwayland-satellite
@@ -103,7 +103,7 @@
     # dmenu
     # st
 
-    # util
+    # UTIL
     # zsh-autosuggestions
     # zsh-syntax-highlighting
     vim
@@ -125,7 +125,7 @@
     # virtualbox
     # remmina
 
-    # development
+    # DEVELOPMENT
     gcc
     clang
     cmake
@@ -139,7 +139,7 @@
     # quartus-prime-lite
     pastel
 
-    # productivity
+    # PRODUCTIVITY
     obsidian
     discord
     zellij
@@ -155,7 +155,7 @@
     # ticktick
     # anki
 
-    # multimedia
+    # MULTIMEDIA
     # deadbeef
     # obs
     # kicad
@@ -163,13 +163,13 @@
     # lmms
     audacity
 
-    # games
+    # GAMES
     # steam-run
     prismlauncher
     osu-lazer-bin
     # taisei
 
-    # fun
+    # FUN
     cava
     tty-clock
     cmatrix
