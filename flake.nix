@@ -19,8 +19,9 @@
         ./common/common.nix
         ./hosts/laptop.nix
         ./hardware/laptop.nix
+
         ./noctalia.nix
-        ./common/modules/sddm.nix
+        ./services/sddm.nix
       ];
     };
 
@@ -37,6 +38,8 @@
         ./common/common.nix
         ./hosts/server.nix
         ./hardware/server.nix
+
+        ./services/copyparty.nix
       ];
     };
   };
