@@ -8,7 +8,7 @@
     serviceConfig = {
       Type = "simple";
       User = "yuni";
-      Group = "users";
+      Group = "srv";
 
       WorkingDirectory = "/srv";
 

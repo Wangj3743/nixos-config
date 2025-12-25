@@ -9,10 +9,16 @@
   i18n.defaultLocale = "en_CA.UTF-8";
 
   # users
+  users.groups.srv = {};
+
   users.users.yuni = {
     isNormalUser = true;
     description = "yuni";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "srv"
+    ];
     shell = pkgs.fish;
     packages = with pkgs; [];
   };
