@@ -80,6 +80,7 @@
     curl
     zellij
     fastfetch
+    qbittorrent
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -97,7 +98,6 @@
   services.tailscale.enable = true;
   services.syncthing.enable = true;
   programs.localsend.enable = true;
-  services.qbittorrent.enable = true;
 
   # openssh daemon
   services.openssh.enable = true;
