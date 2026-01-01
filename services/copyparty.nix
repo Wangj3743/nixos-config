@@ -17,9 +17,7 @@
       Group = "srv";
 
       WorkingDirectory = "/srv";
-
-      ExecStart = "${pkgs.copyparty}/bin/copyparty";
-
+      ExecStart = "${pkgs.copyparty}/bin/copyparty -c ~/.config/copyparty/copyparty.conf";
       Restart = "on-failure";
     };
   };
@@ -32,23 +30,26 @@
     "d /srv/games 2775 root srv -"
     "d /srv/dumps 2775 root srv -"
 
-    "d /srv/media 2775 root srv -"
-    "d /srv/media/music 2775 root srv -"
-    "d /srv/media/movies 2775 root srv -"
-    "d /srv/media/tv 2775 root srv -"
+    "d /srv/media 2770 root srv -"
+    "d /srv/media/music 2770 root srv -"
+    "d /srv/media/movies 2770 root srv -"
+    "d /srv/media/tv 2770 root srv -"
 
-    "d /srv/photos 2775 root srv -"
-    "d /srv/photos/camera 2775 root srv -"
-    "d /srv/photos/camera/videos 2775 root srv -"
-
-    "d /srv/photos/memes 2775 root srv -"
-    "d /srv/photos/art 2775 root srv -"
-    "d /srv/photos/graphics 2775 root srv -"
-    "d /srv/photos/videos 2775 root srv -"
+    "d /srv/images 2775 root srv -"
+    "d /srv/images/immich 2770 root srv -"
+    "d /srv/images/irl 2775 root srv -"
+    "d /srv/images/photography 2775 root srv -"
+    "d /srv/images/art 2775 root srv -"
+    "d /srv/images/wallpapers 2775 root srv -"
+    "d /srv/images/graphics 2775 root srv -"
+    "d /srv/images/screenshots 2775 root srv -"
+    "d /srv/images/memes 2775 root srv -"
 
     "d /srv/shared 2775 root srv -"
     "d /srv/shared/uni 2775 root srv -"
     "d /srv/shared/notes 2775 root srv -"
     "d /srv/shared/music 2775 root srv -"
+
+    "d /srv/uploads 3775 root srv -"
   ];
 }
