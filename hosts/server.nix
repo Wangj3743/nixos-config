@@ -33,17 +33,15 @@
   i18n.defaultLocale = "en_CA.UTF-8";
 
   # X11
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
+  # services.xserver.xkb = {
+  #   layout = "us";
+  #   variant = "";
+  # };
 
   # XFCE
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
+  # services.xserver.displayManager.lightdm.enable = true;
+  # services.xserver.desktopManager.xfce.enable = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -80,7 +78,13 @@
     curl
     zellij
     fastfetch
-    qbittorrent
+    # qbittorrent
+    rtorrent
+    yazi
+    zip
+    unzip
+    tar
+    zoxide
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

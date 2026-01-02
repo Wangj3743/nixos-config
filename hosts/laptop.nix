@@ -96,8 +96,17 @@
     jq
     # dunst
     libnotify
-    wl-clipboard starship xdg-desktop-portal-wlr
+    wl-clipboard 
+    starship
+    xdg-desktop-portal-wlr
     kdePackages.xdg-desktop-portal-kde
+    # kdePackages.xdg-desktop-portal-kde
+    # kdePackages.dolphin
+    # kdePackages.okular
+    # kdePackages.gwenview
+    # kdePackages.ark
+    # kdePackages.discover
+    posy-cursors
     # nushell
     # dwm
     # dmenu
@@ -145,7 +154,7 @@
     zellij
     qbittorrent
     vlc
-    spotify
+    # spotify  # broken ?
     cmus
     rmpc
     mpd
