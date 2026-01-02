@@ -42,7 +42,6 @@
         ./services/copyparty.nix
         ./services/jellyfin.nix
         ./services/immich.nix
-        # ./services/navidrome.nix  # EVENTUALLY REPLACE RICE JELLYFIN
       ];
     };
   };

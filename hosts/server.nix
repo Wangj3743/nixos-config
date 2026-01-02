@@ -34,6 +34,7 @@
 
   # X11
   # services.xserver.enable = true;
+  # services.xserver.libinput.enable = true;
   # services.xserver.xkb = {
   #   layout = "us";
   #   variant = "";
@@ -42,6 +43,14 @@
   # XFCE
   # services.xserver.displayManager.lightdm.enable = true;
   # services.xserver.desktopManager.xfce.enable = true;
+
+  # systemd logind (disable default lid behaviour)
+  services.logind = {
+    killUserProcesses = false;
+    lidSwitch = "ignore";
+    lidSwitchExternalPower = "ignore";
+    lidSwitchDocked = "ignore";
+  };
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -61,9 +70,6 @@
   #   # no need to redefine it in your config for now)
   #   #media-session.enable = true;
   # };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
 
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -95,7 +101,7 @@
   # };
 
   # firefox
-  programs.firefox.enable = true;
+  # programs.firefox.enable = true;
 
   # SERVER STUFF
   services.tailscale.enable = true;
