@@ -83,7 +83,6 @@
     yazi
     zip
     unzip
-    tar
     zoxide
   ];
 
