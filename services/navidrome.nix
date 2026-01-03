@@ -6,10 +6,4 @@
       MusicFolder = "/srv/media/music";
     };
   };
-
-
-  # DIRECTORIES
-  systemd.tmpfiles.rules = [
-    "d /srv/media/music 2775 root srv -"
-  ];
 }

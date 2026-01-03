@@ -45,11 +45,11 @@
   # services.xserver.desktopManager.xfce.enable = true;
 
   # systemd logind (disable default lid behaviour)
-  services.logind = {
-    killUserProcesses = false;
-    lidSwitch = "ignore";
-    lidSwitchExternalPower = "ignore";
-    lidSwitchDocked = "ignore";
+  services.logind.settings.Login = {
+    KillUserProcesses = false;
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
+    HandleLidSwitchDocked = "ignore";
   };
 
   # Enable CUPS to print documents.
@@ -105,7 +105,6 @@
 
   # SERVER STUFF
   services.tailscale.enable = true;
-  services.syncthing.enable = true;
   programs.localsend.enable = true;
 
   # openssh daemon

@@ -41,6 +41,9 @@
     variant = "";
   };
 
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.xserver.libinput.enable = true;
+
   # fcitx5-mozc
   i18n.inputMethod = {
     enable = true;
@@ -69,8 +72,16 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  # vaapi
+  hardware.graphics = {
+    enable = true;
+
+    extraPackages = with pkgs; [
+      intel-media-driver
+        libva
+        libva-utils
+    ];
+  };
 
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -107,6 +118,7 @@
     # kdePackages.ark
     # kdePackages.discover
     posy-cursors
+    gpu-screen-recorder
     # nushell
     # dwm
     # dmenu
@@ -168,7 +180,7 @@
     # deadbeef
     # obs
     # kicad
-    # kdenlive
+    kdePackages.kdenlive
     # lmms
     audacity
 
@@ -230,6 +242,7 @@
   # other
   services.flatpak.enable = true;
   programs.steam.enable = true;
+  programs.gpu-screen-recorder.enable = true;
 
   # openssh daemon
   services.openssh.enable = true;

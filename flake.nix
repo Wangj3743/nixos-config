@@ -40,6 +40,7 @@
         ./hardware/server.nix
 
         ./services/copyparty.nix
+        ./services/syncthing.nix
         ./services/jellyfin.nix
         ./services/immich.nix
       ];
