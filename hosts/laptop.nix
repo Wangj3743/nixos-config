@@ -236,7 +236,10 @@
 
   # server/sync
   services.tailscale.enable = true;
-  services.syncthing.enable = true;
+  services.syncthing = {
+    enable = true;
+    user = "yuni";
+  };
   programs.localsend.enable = true;
 
   # other
