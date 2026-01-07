@@ -84,12 +84,17 @@
     curl
     zellij
     fastfetch
-    # qbittorrent
-    rtorrent
     yazi
     zip
     unzip
     zoxide
+    
+    tlp
+    vlock
+    clamav
+    yt-dlp
+    # qbittorrent
+    rtorrent
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

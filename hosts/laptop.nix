@@ -145,6 +145,8 @@
     yt-dlp
     # virtualbox
     # remmina
+    realvnc-vnc-viewer
+    tigervnc
 
     # DEVELOPMENT
     gcc
@@ -166,12 +168,12 @@
     zellij
     qbittorrent
     vlc
-    # spotify  # broken ?
-    cmus
-    rmpc
-    mpd
     libreoffice
-    cloudflared
+    # spotify  # broken ?
+    # cmus
+    # rmpc
+    # mpd
+    # cloudflared
     # pom
     # ticktick
     # anki
@@ -180,9 +182,9 @@
     # deadbeef
     # obs
     # kicad
-    kdePackages.kdenlive
+    # kdePackages.kdenlive
     # lmms
-    audacity
+    # audacity
 
     # GAMES
     # steam-run
@@ -239,6 +241,8 @@
   services.syncthing = {
     enable = true;
     user = "yuni";
+    configDir = "/home/yuni/.config/syncthing";
+    dataDir = "/home/yuni/Sync";
   };
   programs.localsend.enable = true;
 
