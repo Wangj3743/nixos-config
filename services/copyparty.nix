@@ -34,6 +34,7 @@
     "d /srv/media/music 2770 root srv -"
     "d /srv/media/movies 2770 root srv -"
     "d /srv/media/tv 2770 root srv -"
+    "d /srv/media/books 2770 root srv -"
 
     "d /srv/images 2775 root srv -"
     "d /srv/images/immich 2770 root srv -"

@@ -72,17 +72,6 @@
     #media-session.enable = true;
   };
 
-  # vaapi
-  hardware.graphics = {
-    enable = true;
-
-    extraPackages = with pkgs; [
-      intel-media-driver
-        libva
-        libva-utils
-    ];
-  };
-
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -129,6 +118,7 @@
     # zsh-syntax-highlighting
     vim
     neovim
+    emacs
     # vscode
     git
     tmux
@@ -142,10 +132,12 @@
     ffmpeg
     nautilus
     stow
+    valgrind
+    gdb
     yt-dlp
     # virtualbox
     # remmina
-    realvnc-vnc-viewer
+    # realvnc-vnc-viewer
     tigervnc
 
     # DEVELOPMENT
@@ -160,6 +152,7 @@
     jre8
     jre17_minimal
     # quartus-prime-lite
+    ltspice
     pastel
 
     # PRODUCTIVITY
@@ -202,6 +195,12 @@
 
     sddm-astronaut
     kdePackages.qtmultimedia
+  ];
+
+  # nix-ld
+  programs.nix-ld.enable =  true;
+  programs.nix-ld.libraries = with pkgs; [
+    
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -259,10 +258,22 @@
   networking.firewall.allowedUDPPorts = [ 5353 53317 ];
   # networking.firewall.enable = false;  # disable firewall
 
+  # windows partition
   fileSystems."/mnt/win11" = {
     device = "/dev/disk/by-uuid/6A4A1ED74A1E9FBD";
     fsType = "ntfs3";
     options = [ "rw" "uid=1000" "gid=100" "dmask=022" "fmask=133" ];
+  };
+
+  # vaapi
+  hardware.graphics = {
+    enable = true;
+
+    extraPackages = with pkgs; [
+      intel-media-driver
+        libva
+        libva-utils
+    ];
   };
 
   # environment.sessionVariables.NIXOS_OZONE_WL = "1";
