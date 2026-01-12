@@ -38,8 +38,22 @@
     "d /srv/media/tv 2770 root srv -"
     "d /srv/media/books 2770 root srv -"
 
+    "d /srv/immich 2770 root srv -"
+    "d /srv/immich/upload/ 2770 root srv -"
+    "d /srv/immich/library/ 2770 root srv -"
+    "d /srv/immich/thumbs/ 2770 root srv -"
+    "d /srv/immich/encoded-video/ 2770 root srv -"
+    "d /srv/immich/profile/ 2770 root srv -"
+    "d /srv/immich/backups/ 2770 root srv -"
+    "f /srv/immich/.immich 0644 root srv - -"
+    "f /srv/immich/upload/.immich 0644 root srv - -"
+    "f /srv/immich/library/.immich 0644 root srv - -"
+    "f /srv/immich/thumbs/.immich 0644 root srv - -"
+    "f /srv/immich/encoded-video/.immich 0644 root srv - -"
+    "f /srv/immich/profile/.immich 0644 root srv - -"
+    "f /srv/immich/backups/.immich 0644 root srv - -"
+
     "d /srv/images 2775 root srv -"
-    "d /srv/images/immich 2770 root srv -"
     "d /srv/images/irl 2775 root srv -"
     "d /srv/images/photography 2775 root srv -"
     "d /srv/images/art 2775 root srv -"
@@ -47,6 +61,7 @@
     "d /srv/images/graphics 2775 root srv -"
     "d /srv/images/screenshots 2775 root srv -"
     "d /srv/images/memes 2775 root srv -"
+
 
     "d /srv/shared 2775 root srv -"
     "d /srv/shared/uni 2775 root srv -"
