@@ -2,10 +2,13 @@
   # CONFIG
   services.immich = {
     enable = true;
-    host = "0.0.0.0";
+    host = "0.0.0.0";  # tailscale
     port = 2283;
-    mediaLocation = "/srv/images/immich"
+    mediaLocation = "/srv/images/immich";
   };
+
+  # FIREWALL
+  networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 2283 ];
 
   # USER PERMISSIONS
   users.users.immich.extraGroups = [ "srv" ];
