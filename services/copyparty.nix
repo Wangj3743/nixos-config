@@ -26,9 +26,11 @@
   systemd.tmpfiles.rules = [
     "d /srv 2775 root srv -"
     "d /srv/docs 2775 root srv -"
+    "d /srv/videos 2775 root srv -"
     "d /srv/projects 2775 root srv -"
     "d /srv/games 2775 root srv -"
     "d /srv/dumps 2775 root srv -"
+    "d /srv/archives 2775 root srv -"
 
     "d /srv/media 2770 root srv -"
     "d /srv/media/music 2770 root srv -"
