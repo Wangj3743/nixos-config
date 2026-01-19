@@ -62,7 +62,6 @@
     "d /srv/images/screenshots 2775 root srv -"
     "d /srv/images/memes 2775 root srv -"
 
-
     "d /srv/shared 2775 root srv -"
     "d /srv/shared/uni 2775 root srv -"
     "d /srv/shared/notes 2775 root srv -"

@@ -180,8 +180,8 @@
     # audacity
 
     # GAMES
-    # steam-run
     prismlauncher
+    waywall
     osu-lazer-bin
     # taisei
 
@@ -247,8 +247,13 @@
 
   # other
   services.flatpak.enable = true;
-  programs.steam.enable = true;
   programs.gpu-screen-recorder.enable = true;
+
+  # steam
+  programs.steam.enable = true;
+  programs.steam.extraCompatPackages = with pkgs; [
+    proton-ge-bin
+  ];
 
   # openssh daemon
   services.openssh.enable = true;
@@ -275,6 +280,9 @@
         libva-utils
     ];
   };
+
+  # bluetooth
+  hardware.bluetooth.enable = true;
 
   # environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
