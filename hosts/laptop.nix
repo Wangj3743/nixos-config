@@ -79,7 +79,7 @@
   environment.systemPackages = with pkgs; [
     # SYSTEM
     nh
-    nix-index
+    # nix-index
     xwayland-satellite
     brightnessctl
     # alacritty
@@ -112,13 +112,15 @@
     # dwm
     # dmenu
     # st
+    # jellyfin-rpc
+    jellyfin-tui
 
     # UTIL
     # zsh-autosuggestions
     # zsh-syntax-highlighting
     vim
     neovim
-    emacs
+    # emacs
     # vscode
     git
     tmux
@@ -131,14 +133,14 @@
     curl
     ffmpeg
     nautilus
-    stow
-    valgrind
-    gdb
-    yt-dlp
+    tree
+    # stow
+    # valgrind
+    # gdb
+    # yt-dlp
     # virtualbox
     # remmina
-    # realvnc-vnc-viewer
-    tigervnc
+    # tigervnc
 
     # DEVELOPMENT
     gcc
@@ -149,11 +151,14 @@
     python3
     nodejs
     rustup
+    lua
+    luajit
     jre8
-    jre17_minimal
+    # jre17_minimal
     # quartus-prime-lite
-    ltspice
-    pastel
+    # ltspice
+    kicad
+    # pastel
 
     # PRODUCTIVITY
     obsidian
@@ -161,7 +166,7 @@
     zellij
     qbittorrent
     vlc
-    libreoffice
+    # libreoffice
     # spotify  # broken ?
     # cmus
     # rmpc
@@ -173,17 +178,18 @@
 
     # MULTIMEDIA
     # deadbeef
-    # obs
-    # kicad
+    obs-studio
     # kdePackages.kdenlive
     # lmms
     # audacity
 
     # GAMES
-    prismlauncher
-    waywall
     osu-lazer-bin
     # taisei
+    prismlauncher
+    waywall
+    # glfw
+    glfw3-minecraft
 
     # FUN
     cava
@@ -193,6 +199,8 @@
     pipes
     figlet
 
+    nerd-fonts.fantasque-sans-mono
+    sarasa-gothic
     sddm-astronaut
     kdePackages.qtmultimedia
   ];
